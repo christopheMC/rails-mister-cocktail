@@ -1,10 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
-      <h1>All our ingredients</h1>
+      <%= link_to "back", cocktails_path %>
+      <h1 style="color: white">All our ingredients</h1>
       <ol>
         <% @ingredients.each do |ingredient| %>
-          <li><%= ingredient.name %></li>
+          <li style="color: white"><%= ingredient.name %></li>
         <% end %>
       </ol>
     </div>
