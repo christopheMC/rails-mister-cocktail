@@ -1,0 +1,45 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Home", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Action", "#", class: "dropdown-item" %>
+          <%= link_to "Another action", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <ol>
+          <% @cocktail.doses.each do |dose| %>
+            <li><%= dose.ingredient.name %>: <%= dose.description %>
+              <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </li>
+          <% end %>
+        </ol>
+      </div>
+      <%= link_to "Add ingredients", new_cocktail_dose_path(@cocktail), class:"btn btn-primary" %>
+      <%= link_to "back", cocktails_path, class:"btn btn-primary" %>
+    </div>
+  </div>
+</div>
