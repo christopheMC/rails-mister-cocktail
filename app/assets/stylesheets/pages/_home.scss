@@ -6,21 +6,25 @@
 
 .card {
   width: 300px;
-  height: 244px;
+  height: 300px;
   margin: 10px;
   box-shadow: 4px 4px 8px white;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .card-info {
   background-color: #222831;
   h3 {
     color: white;
+    font-family: $h3;
   }
 }
 
 .card img {
   width: 100%;
-  height: 200px;
+  height: 256px;
 }
 
 
@@ -29,15 +33,28 @@
   color: black;
 }
 
-.title {
+.title-small {
   background-color: white;
   border-radius: 4px;
+  width: 990px;
+  margin-top: 10px;
   h1 {
     color: $gray;
+    font-size: 32px;
   }
 }
 
-.card_show {
+.title-big {
+  width: 100%;
+  transition: 0.5s width ease;
+  border-radius: 0;
+  position: fixed;
+  top: 0px;
+  margin-top: 0px;
+  z-index: 1;
+}
+
+.card-show {
   width: 400px;
   box-shadow: 4px 4px 8px $gray;
   margin-top: 20px;
@@ -51,6 +68,10 @@
   h3 {
     padding-left: 10px;
     color: $gray;
+    text-decoration: underline;
   }
 }
 
+h1 {
+  font-family: $h1;
+}

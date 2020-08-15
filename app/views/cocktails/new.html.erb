@@ -1,5 +1,14 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "A la maison", cocktails_path, class: "btn btn-success" %>
+      </li>
+    </ul>
+  </div>
+</div>
 <div class="container">
-  <div class="row">
+  <div class="row d-flex justify-content-center">
     <div class="col-6">
       <%= simple_form_for(@cocktail) do |f| %>
         <%= f.input :name %>
