@@ -19,6 +19,14 @@ import { loadDynamicBannerText } from '../components/banner';
 document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
 });
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('.btn btn-warning', {
+  title: "Félicitations!!",
+  text: "Vous venez d'ajouter un excellent cocktail!",
+  icon: "success"
+});
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.

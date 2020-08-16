@@ -1,7 +1,12 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1519214605650-76a613ee3245?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1519214605650-76a613ee3245?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80);">
   <div class="container">
-    <h1 class="mb-3">Le 13</h1>
-    <p>Venez, <span id="banner-typed-text"></span></p>
+    <div class="row">
+      <div class="col-sm-6 col-md-12">
+        <div class="d-flex justify-content-center align-items-center"></div>
+          <h1 class="mb-3">Au 13,</h1>
+          <p>Venez, <span id="banner-typed-text"></span></p>
+      </div>
+    </div>
   </div>
 </div>
 <div class="d-flex justify-content-center">
@@ -13,11 +18,11 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <div class="d-flex justify-content-start flex-wrap present">
+      <div class="d-flex justify-content-center flex-wrap present">
         <% @cocktails.each do |cocktail| %>
           <%= link_to cocktail_path(cocktail) do %>
             <div class="card">
-                <%= cl_image_tag cocktail.photo.key, crop: :fill %>
+                <%= cl_image_tag cocktail.photo.key, :height=>256, :width=> 298, crop: :fill %>
               <div class="card-info">
                 <h3 class="pl-2"><%= cocktail.name %></h3>
               </div>
@@ -37,6 +42,6 @@
     <a href="#"><i class="fab fa-linkedin"></i></a>
   </div>
   <div class="footer-copyright">
-    <%= link_to "Tous nos ingredients", ingredients_path %> au 13
+    <%= link_to "Les ingredients", ingredients_path %> du 13
   </div>
 </div>
